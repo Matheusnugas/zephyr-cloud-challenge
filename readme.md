@@ -101,7 +101,7 @@ zephyr-mf-challenge/
 
 **What Zephyr Does:**
 - Integrates directly with build tools via plugins
-- Provides instant deployment to global edge network
+- Provides instant deployment
 - Handles Module Federation orchestration automatically
 - Offers versioning, rollback, and environment management
 - Eliminates complex CI/CD setup for micro-frontends
@@ -112,18 +112,8 @@ zephyr-mf-challenge/
 - **Reliability**: Immutable deployments with atomic updates
 - **Scale**: Built for enterprise micro-frontend architectures
 
-## 📈 Performance Metrics
-
-- **Vite Remote**: 309ms upload, 1408ms total deployment
-- **Rspack Remote**: 247ms upload, 605ms total deployment  
-- **Webpack Remote**: 250ms upload, 497ms total deployment
-- **Host Application**: 254ms upload, 625ms total deployment
-
-**Total deployment time for 4 applications: ~3.1 seconds** ⚡
-
 ## 🔗 Links
 
 - **Zephyr Cloud**: https://zephyr-cloud.io
 - **Documentation**: https://docs.zephyr-cloud.io
 - **Module Federation**: https://module-federation.io
-- **Challenge Email**: [View Requirements](./challenge-email.md)
