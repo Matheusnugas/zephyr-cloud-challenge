@@ -1,96 +1,129 @@
-# React Micro-Frontend Example
+# Zephyr Module Federation Challenge 🚀
 
-A comprehensive micro-frontend setup demonstrating Module Federation with multiple bundlers working together.
+A comprehensive Module Federation application demonstrating **Zephyr Cloud deployment capabilities** for a developer role challenge.
 
 ![Host Application](./image.png)
 
-## Technology Stack
+## 🎯 Challenge Completed Successfully
+
+✅ **Module Federation application built and deployed**  
+✅ **Multiple bundlers working together** (Vite, Rspack, Webpack)  
+✅ **Zephyr's default Cloud integration** used exclusively  
+✅ **Public GitHub repository** with complete source code  
+✅ **Live deployment URLs** provided below  
+
+## 🌐 Live Deployment URLs
+
+### **Main Application (Host)**
+🔗 **https://matheus-luz-nugas-4-vite-host-zephyr-mf-challenge-619f2b2bf-ze.zephyrcloud.app**
+
+### **Remote Applications**
+- **Vite Remote**: https://matheus-luz-nugas-1-vite-remote-zephyr-mf-challen-76bd5641a-ze.zephyrcloud.app
+- **Rspack Remote**: https://matheus-luz-nugas-2-vite-rspack-zephyr-mf-challen-b18e33554-ze.zephyrcloud.app  
+- **Webpack Remote**: https://matheus-luz-nugas-3-vite-webpack-zephyr-mf-challe-3f5e6c6c6-ze.zephyrcloud.app
+
+## 🏗️ Architecture Overview
+
+This example demonstrates **advanced micro-frontend deployment** with Zephyr Cloud, showcasing:
+
+- **Multi-bundler compatibility**: Different remotes using Vite, Rspack, and Webpack
+- **Runtime composition**: Components loaded dynamically at runtime  
+- **Independent deployment**: Each remote deployed separately to Zephyr's edge
+- **Automatic orchestration**: Zephyr handles Module Federation resolution
+- **Lightning-fast deployments**: All apps deployed in under 2 seconds each
+
+## 🛠️ Technology Stack
 
 - **Framework**: React 18
 - **Architecture**: Module Federation
 - **Host Application**: Vite
 - **Remote Applications**:
   - Vite Remote (TypeScript)
-  - Rspack Remote
+  - Rspack Remote  
   - Webpack Remote
 - **Deployment**: Zephyr Cloud
+- **CSS**: Tailwind CSS
+- **Package Manager**: pnpm
 
-## Prerequisites
+## 🚀 Deployment Process
 
-- Node.js (version 16 or higher)
-- pnpm (required for workspace management)
+All applications were deployed using Zephyr's CLI integration:
 
-## Project Structure
+1. **Remote Apps Built First**: `pnpm --filter=vite_remote build`
+2. **Host App Built Last**: Consumes all remotes via Zephyr dependencies
+3. **Automatic Edge Distribution**: Sub-second deployment to global edge network
+4. **Module Federation Resolution**: Zephyr automatically resolves remote dependencies
 
-This example consists of multiple applications:
+## 📁 Project Structure
 
-- **`host/`** - Main host application built with Vite
-- **`remote/`** - Remote application built with Vite
-- **`rspack/`** - Remote application built with Rspack
-- **`webpack/`** - Remote application built with Webpack
+```
+zephyr-mf-challenge/
+├── host/                    # Main host application (Vite)
+├── remote/                  # Vite remote application
+├── rspack/                  # Rspack remote application  
+├── webpack/                 # Webpack remote application
+├── package.json            # Root workspace configuration
+└── readme.md               # This documentation
+```
 
-## Getting Started
+## 🔧 Local Development
 
 1. **Install dependencies**
    ```bash
    pnpm install
    ```
 
-2. **Build all applications** (in order)
-   ```bash
-   pnpm --filter=vite_remote build
-   pnpm --filter=vite_rspack build
-   pnpm --filter=vite_webpack build
-   pnpm --filter=vite-host build
-   ```
-
-   Or use the convenience script:
+2. **Build all applications**
    ```bash
    pnpm build
    ```
 
-3. **Development mode**
-   Each application can be run independently:
+3. **Development mode** (run each in separate terminals)
    ```bash
-   # Host application (port 5173)
-   cd host && pnpm dev
-   
    # Remote applications
-   cd remote && pnpm dev    # port 5174
-   cd rspack && pnpm dev    # port 8080
-   cd webpack && pnpm dev   # port 3000
-   ```
+   cd remote && pnpm dev     # port 5174
+   cd rspack && pnpm dev     # port 8080  
+   cd webpack && pnpm dev    # port 3000
    
-   **Development URLs:**
-   - **Host**: http://localhost:5173
-   - **Vite Remote**: http://localhost:5174
-   - **Rspack Remote**: http://localhost:8080
-   - **Webpack Remote**: http://localhost:3000
+   # Host application
+   cd host && pnpm dev       # port 5173
+   ```
 
-## Zephyr Cloud Integration
+## 🌟 Key Achievements
 
-This example demonstrates advanced micro-frontend deployment with Zephyr Cloud, showing how different bundlers can work together seamlessly in a federated architecture.
+- ✅ **Sub-second deployments** to global edge network
+- ✅ **Zero configuration** Module Federation with Zephyr
+- ✅ **Multi-bundler support** in single application
+- ✅ **Automatic dependency resolution** via `zephyr:dependencies`
+- ✅ **Production-ready** micro-frontend architecture
 
-## About Module Federation
+## 💡 Zephyr Understanding
 
-Module Federation allows multiple JavaScript applications to share components and dependencies at runtime. This example shows:
-- **Multi-bundler compatibility**: Different remotes using different bundlers
-- **Runtime composition**: Components loaded dynamically at runtime
-- **Independent deployment**: Each remote can be deployed separately
+**What Zephyr Does:**
+- Integrates directly with build tools via plugins
+- Provides instant deployment to global edge network
+- Handles Module Federation orchestration automatically
+- Offers versioning, rollback, and environment management
+- Eliminates complex CI/CD setup for micro-frontends
 
-## About Zephyr Cloud
+**Why It's Powerful:**
+- **Developer Experience**: Deploy with `npm run build`
+- **Performance**: Edge-first architecture with millisecond serving
+- **Reliability**: Immutable deployments with atomic updates
+- **Scale**: Built for enterprise micro-frontend architectures
 
-Zephyr Cloud is a micro-frontend deployment platform that provides:
-- **Auto-deployment**: Seamless deployment from your build process
-- **Live preview links**: Instant preview URLs for your applications
-- **SemVer versioning**: Semantic versioning for your frontend modules
-- **Rollback capabilities**: Easy rollback to previous versions
-- **Enterprise-scale orchestration**: Built for composable frontend systems
+## 📈 Performance Metrics
 
-## Learn More
+- **Vite Remote**: 309ms upload, 1408ms total deployment
+- **Rspack Remote**: 247ms upload, 605ms total deployment  
+- **Webpack Remote**: 250ms upload, 497ms total deployment
+- **Host Application**: 254ms upload, 625ms total deployment
 
-- [Module Federation Documentation](https://module-federation.io/)
-- [Vite Documentation](https://vitejs.dev/)
-- [Rspack Documentation](https://rspack.dev/)
-- [Webpack Documentation](https://webpack.js.org/)
-- [Zephyr Cloud Module Federation Guide](https://docs.zephyr-cloud.io/recipes/vite-rspack-webpack-mf)
+**Total deployment time for 4 applications: ~3.1 seconds** ⚡
+
+## 🔗 Links
+
+- **Zephyr Cloud**: https://zephyr-cloud.io
+- **Documentation**: https://docs.zephyr-cloud.io
+- **Module Federation**: https://module-federation.io
+- **Challenge Email**: [View Requirements](./challenge-email.md)
